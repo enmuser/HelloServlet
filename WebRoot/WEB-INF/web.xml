@@ -775,20 +775,30 @@ standard deployment descriptor.
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
     <servlet-name>HelloServlet</servlet-name>
-    <servlet-class>day01.HelloServlet</servlet-class>
+    <servlet-class>user.servlet.HelloServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>AddUserServlet</servlet-name>
-    <servlet-class>day01.AddUserServlet</servlet-class>
+    <servlet-class>user.servlet.AddUserServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>QueryUserServlet</servlet-name>
-    <servlet-class>day01.QueryUserServlet</servlet-class>
+    <servlet-class>user.servlet.QueryUserServlet</servlet-class>
   </servlet>
   <servlet>
     <servlet-name>DeleteUserServlet</servlet-name>
-    <servlet-class>day01.DeleteUserServlet</servlet-class>
+    <servlet-class>user.servlet.DeleteUserServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>user.servlet.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ModifyUserServlet</servlet-name>
+    <servlet-class>user.servlet.ModifyUserServlet</servlet-class>
+  </servlet>
+
+
   <servlet-mapping>
     <servlet-name>HelloServlet</servlet-name>
     <url-pattern>/sayHello</url-pattern>
@@ -804,5 +814,13 @@ standard deployment descriptor.
   <servlet-mapping>
     <servlet-name>DeleteUserServlet</servlet-name>
     <url-pattern>/DeleteUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/UpdateUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ModifyUserServlet</servlet-name>
+    <url-pattern>/ModifyUser</url-pattern>
   </servlet-mapping>
 </web-app>

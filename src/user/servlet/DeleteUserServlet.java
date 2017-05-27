@@ -82,6 +82,6 @@ public class DeleteUserServlet extends HttpServlet
     	}
     	
     	response.setCharacterEncoding("utf-8");
-    	response.sendRedirect("/WebApp/QueryUser");
+    	response.sendRedirect("/HelloServlet/QueryUser");
     }
 }
