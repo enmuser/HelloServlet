@@ -62,6 +62,8 @@ public class AddUserServlet extends HttpServlet
 			ps.setString(6, education);
 			ps.setString(7,hobbiesStr);
 			ps.executeUpdate();
+			PrintWriter writer = response.getWriter();
+	    	writer.print("<h1 font-color='red'>恭喜"+userName+"注册成功</h1>");
 			con.commit();
 			
 		}
@@ -102,7 +104,7 @@ public class AddUserServlet extends HttpServlet
 				}
     		}
     	}
-    	PrintWriter writer = response.getWriter();
-    	writer.print("<h1 font-color='red'>恭喜"+userName+"注册成功</h1>");
+    	
+    	response.sendRedirect(request.getContextPath()+"/QueryUser");
     }
 }

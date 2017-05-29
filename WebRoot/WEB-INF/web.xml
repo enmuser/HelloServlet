@@ -797,6 +797,17 @@ standard deployment descriptor.
     <servlet-name>ModifyUserServlet</servlet-name>
     <servlet-class>user.servlet.ModifyUserServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>HelloServletInterface</servlet-name>
+    <servlet-class>servlet.interfaceImpl.HelloServletInterface</servlet-class>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>user.servlet.together.UserServlet</servlet-class>
+  </servlet>
+
+
 
 
   <servlet-mapping>
@@ -822,5 +833,13 @@ standard deployment descriptor.
   <servlet-mapping>
     <servlet-name>ModifyUserServlet</servlet-name>
     <url-pattern>/ModifyUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HelloServletInterface</servlet-name>
+    <url-pattern>/HelloServletInterface</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>*.do</url-pattern>
   </servlet-mapping>
 </web-app>

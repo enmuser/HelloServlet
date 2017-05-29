@@ -74,7 +74,7 @@ public class QueryUserServlet extends HttpServlet
 				out.println("<td>" + salary + "</td>");
 				out.println("<td>" + education + "</td>");
 				out.println("<td>" + hobbies + "</td>");
-				out.println("<td><a href='DeleteUser?userId=" + userId + "'>删除</a><a href='UpdateUser?userId=" + userId
+				out.println("<td><a href='DeleteUser?userId=" + userId + "' onclick='return confirm(\"确定要删除吗？\")'>删除</a><a href='UpdateUser?userId=" + userId
 						+ "' >修改</a></td>");
 				out.println("</tr>");
 			}
