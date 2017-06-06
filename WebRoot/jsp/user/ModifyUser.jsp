@@ -6,6 +6,7 @@
 </head>
 
 <body>
+    <%@ include file="/jsp/user/Top.jsp" %>
 	<%
 		UserInfo userInfo = (UserInfo) request.getAttribute("userInfo");
 	%>

@@ -7,6 +7,7 @@
 </head>
 
 <body>
+   <%@ include file="/jsp/user/Top.jsp" %>
 	<table border="1px">
 		<thead>
 			<tr>

@@ -1,10 +1,16 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8" errorPage="/jsp/user/error.jsp"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
   </head>
   
   <body>
+   <% int i = 1/0; %>
+     <!-- jsp 指令引入 -->
+     <%@ include file="/jsp/user/Top.jsp" %>
+_________________________________________________________________________________
+     <!-- jsp 动作引入 -->
+<%--      <jsp:include page="/jsp/user/Top.jsp"></jsp:include> --%>
      <form action="<%=request.getContextPath()%>/addUser.do" method="post">
        name:<input type="text" name="userName" value=""><br/>
        password:<input type="password" name="password" value=""><br/>
