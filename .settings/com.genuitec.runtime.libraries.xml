@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project>
+  <container path="com.genuitec.runtime.library/com.genuitec.jstl_1.2.2">
+    <jar-attrs id="data/libraryset/JSTL1.2.1/lib/javax.servlet.jsp.jstl.jar">
+      <attribute name="source-path" value="F:\CodeSources\javax.servlet.jsp.jstl-1.2.2-sources.jar"/>
+      <attribute name="source-path-root"/>
+      <attribute name="javadoc_location"/>
+    </jar-attrs>
+    <jar-attrs id="data/libraryset/JSTL1.2.2/lib//jstl-impl-1.2.2.jar">
+      <attribute name="source-path" value="F:\CodeSources\javax.servlet.jsp.jstl-1.2.2-sources.jar"/>
+      <attribute name="source-path-root"/>
+      <attribute name="javadoc_location"/>
+    </jar-attrs>
+  </container>
+</project>

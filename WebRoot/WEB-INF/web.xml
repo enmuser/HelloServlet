@@ -1,9 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:web="http://xmlns.jcp.org/xml/ns/javaee"
-	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	
+	<!-- 配置全局参数 -->
+	<context-param>
+	   <param-name>XXX</param-name>
+	   <param-value>XXX</param-value>
+	</context-param>
+	
+	<!-- 监听器 -->
+	<listener>
+	  <listener-class>listener.ServletContextListenerServlet</listener-class>
+	</listener>
+	<listener>
+	  <listener-class>listener.OnlineUserListener</listener-class>
+	</listener>
+	
+	<!-- 过滤器的配置 -->
+    <!-- 日志打印 -->
+	<filter>
+	   <filter-name>LoggerFilter</filter-name>
+	   <filter-class>filter.LoggerFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>LoggerFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 字符集设置 -->
+	<filter>
+	   <filter-name>CharSetFilter</filter-name>
+	   <filter-class>filter.CharSetFilter</filter-class>
+	   <init-param>
+	       <param-name>encoding</param-name>
+	       <param-value>utf-8</param-value>
+	   </init-param>
+	</filter>
+	
+	<filter-mapping>
+	    <filter-name>CharSetFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 黑名单 -->
+<!-- 	<filter> -->
+<!-- 	   <filter-name>BlackFilter</filter-name> -->
+<!-- 	   <filter-class>filter.BlackListFilter</filter-class> -->
+<!-- 	   <init-param> -->
+<!-- 	       <param-name>blacklist</param-name> -->
+<!-- 	       <param-value>0.0.0.0</param-value> -->
+<!-- 	   </init-param> -->
+<!-- 	</filter> -->
+	
+<!-- 	<filter-mapping> -->
+<!-- 	    <filter-name>BlackFilter</filter-name> -->
+<!-- 	    <url-pattern>/*</url-pattern> -->
+<!-- 	</filter-mapping> -->
+	<!-- 登录校验 -->
+	<filter>
+	   <filter-name>LoginFilter</filter-name>
+	   <filter-class>filter.LoginFilter</filter-class>
+	</filter>
+	<!-- 一个Servlet对应两个ServletMapping -->
+	<filter-mapping>
+	    <filter-name>LoginFilter</filter-name>
+	    <url-pattern>*.car</url-pattern>
+	</filter-mapping>
+	
+	<filter-mapping>
+	    <filter-name>LoginFilter</filter-name>
+	    <url-pattern>*.order</url-pattern>
+	</filter-mapping>
+	<!-- 登录校验 -->
+	
+	<!-- 错误页面的配置 -->
 	<error-page>
 	  <error-code>404</error-code>
 	  <location>/404.jsp</location>
@@ -90,6 +161,17 @@
     <servlet-name>OrderServlet</servlet-name>
     <servlet-class>shopping.OrderServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ServletContextServlet</servlet-name>
+    <servlet-class>servletContext.ServletContextServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>FileUpload</servlet-name>
+    <servlet-class>fileUpload.FileUpload</servlet-class>
+  </servlet>
+
+
+
 
 
 
@@ -181,5 +263,13 @@
   <servlet-mapping>
     <servlet-name>OrderServlet</servlet-name>
     <url-pattern>*.order</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ServletContextServlet</servlet-name>
+    <url-pattern>/ServletContext</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>FileUpload</servlet-name>
+    <url-pattern>/FileUpload</url-pattern>
   </servlet-mapping>
 </web-app>
